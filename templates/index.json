@@ -3,16 +3,14 @@
     "index_custom_banner_Ht6Kxe": {
       "type": "index-custom-banner",
       "settings": {
-        "box_bgcolor": "#fff",
-        "box_text_color": "#000",
-        "Content_alignment": "bottom-left",
-        "text_alignment": "text-left",
+        "box_bgcolor": "#ffffff",
+        "box_text_color": "#000000",
         "title": "The Gift Guide",
         "description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.<\/p>",
         "btn_text": "Shop Now",
         "btn_link": "",
-        "caption_bar_bgcolor": "#F5F5F5",
-        "caption_bar_textcolor": "#000",
+        "caption_bar_bgcolor": "#f5f5f5",
+        "caption_bar_textcolor": "#000000",
         "caption-text": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
       }
     },
@@ -23,6 +21,7 @@
         "description": "",
         "show_description": false,
         "collection": "all",
+        "upsell_product": "dark-winter-jacket",
         "products_to_show": 6,
         "padding_top": 36,
         "padding_bottom": 36
