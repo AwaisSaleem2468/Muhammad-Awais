@@ -1,0 +1,80 @@
+@media only screen and (max-width: 991px){
+    #banner .content-wrapper {
+        min-height: 480px;
+    }
+    #banner .content-blk {
+        max-width: 470px;
+        padding: 30px 15px;
+    }
+    #banner .content-blk .heading {
+        margin-bottom: 15px;
+        font-size: 48px;
+    }
+    #banner .content-blk p {
+        font-size: 16px;
+        margin: 0 0 15px;
+    }
+    #custom-collection .title-area {
+        text-align: center;
+    }
+    #custom-collection .card-head {
+        height: 240px;
+    }    
+    .header-cta {
+        margin-top: 20px;
+    }
+    .header-custom-content {
+        text-align: center;
+        padding: 50px 0;
+    }
+}
+@media only screen and (max-width: 767px){
+    .for-desktop{
+        display: none;
+    }
+    .for-mobile{
+        display: block;
+    }
+    .btn {
+        padding: 15px 30px;
+    }
+    .custom-col-3 {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    #banner .content-blk-mob {
+        text-align: center;
+        padding: 30px 15px;
+    }
+    #banner .content-blk-mob .heading {
+        color: #000;
+        font-size: 30px;
+    }
+    #banner .content-blk-mob p {
+        font-size: 16px;
+        font-family: 'Jost';
+        color: inherit;
+        margin: 10px 0 0;
+    }
+    #banner .banner-mobile-bg-wrapper {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 265px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+    #custom-collection .title-area .heading {
+        margin: 0;
+    }
+    #custom-collection .card-head {
+        height: 180px;
+    }
+    #custom-collection .popup-trigger {
+        top: 35px;
+        right: 30px;
+    }
+}

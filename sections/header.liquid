@@ -134,7 +134,7 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}" style="background-color:{{ section.settings.header_bgcolor }};">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -187,6 +187,11 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
+    {% if section.settings.header_caption != blank %}
+    <div class="header-caption for-desktop">
+      <p>{{  section.settings.header_caption }}</p>
+    </div>
+    {% else %}
 
     {%- liquid
       if section.settings.menu != blank
@@ -197,6 +202,9 @@
         endif
       endif
     %}
+
+  {% endif %}
+    
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -228,6 +236,12 @@
       {%- endif -%}
     {%- endif -%}
 
+
+    {% if section.settings.btn_text != blank %}
+      <div class="header-cta for-desktop">
+        <a href="{{ section.settings.btn_link }}" class="btn">{{ section.settings.btn_text }}<img src="https://cdn.shopify.com/s/files/1/0656/6576/1443/files/Line_15.png?v=1717694667"></a>
+      </div>
+    {% else %}
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -301,6 +315,11 @@
         {%- endif -%}
       </a>
     </div>
+
+
+  {% endif %}
+
+    
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
@@ -619,6 +638,33 @@
       "unit": "px",
       "label": "t:sections.header.settings.margin_bottom.label",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Header Customizable Content"
+    },
+    {
+      "type": "color",
+      "id": "header_bgcolor",
+      "label": "Select Header Background Color",
+      "default": "#F5F5F5"
+      },
+    {
+      "type": "text",
+      "id": "header_caption",
+      "label": "Add Header Caption Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Add Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Add Button link"
     },
     {
       "type": "header",
