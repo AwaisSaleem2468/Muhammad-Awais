@@ -106,6 +106,7 @@ const popupExtension = {
       console.log('Selected text:', event.currentTarget.textContent);
       span.innerHTML = event.currentTarget.textContent;
       dropdownWrapper.classList.remove('is-active'); // Close the dropdown after selection
+      popupExtension.updateVariantId();
     }));
   },
   getSelectedColor: function() {
@@ -121,16 +122,9 @@ const popupExtension = {
     const selectedSize = document.querySelector('#dropdown-wrapper .selected-size').innerText;
     const variants = JSON.parse(document.querySelector('.pro-info').getAttribute('data-variants'));
     let variantId = null;
-    console.log('selectedColor', selectedColor);
-    console.log('selectedSize', selectedSize);
     if (selectedColor && selectedSize !== 'Choose your size') {
-      console.log('both');
-      console.log('variants', variants);
       for (let i = 0; i < variants.length; i++) {
-        console.log('variants[i].option1', variants[i].option1);
-        console.log('variants[i].option2', variants[i].option2);
         if (variants[i].option1 === selectedSize && variants[i].option2 === selectedColor) {
-          console.log('Color found');
           variantId = variants[i].id;
           break;
         }
@@ -139,6 +133,9 @@ const popupExtension = {
     const atcBtn = document.querySelector('.add-to-cart-cta .btn');
     if (variantId) {
       atcBtn.setAttribute('data-variant-id', variantId);
+      if(selectedColor == 'Black' && selectedSize == 'M') {
+        atcBtn.setAttribute('atc-upsell', 'true');
+      }
     } else {
       atcBtn.removeAttribute('data-variant-id');
     }
@@ -168,6 +165,18 @@ const popupExtension = {
       const cartItem = new CartItem(variantId, quantity, properties);
       cartItem.addToItemsArray();
 
+      const upsellInput = document.querySelector('.pro-info [name="upsell"]');
+      if(upsellInput && atcBtn.getAttribute('atc-upsell') === 'true') {
+        let UpsellvariantId = parseInt(upsellInput.value);
+        const upsellItem = new CartItem(UpsellvariantId, 1, {});
+        upsellItem.addToItemsArray();
+      }
+
+      const items = items_array;
+      const data = {
+        items
+      };
+      
       // Make AJAX request to add the item to Shopify cart
       try {
         const response = await fetch('/cart/add.js', {
@@ -175,11 +184,7 @@ const popupExtension = {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            id: variantId,
-            quantity: quantity,
-            properties: properties
-          })
+          body: JSON.stringify(data)
         });
 
         if (!response.ok) {

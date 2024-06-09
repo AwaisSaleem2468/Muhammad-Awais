@@ -51,7 +51,7 @@
         </div>
     </div>
 </section>
-{% render 'quick-view-popup'%}
+{% render 'quick-view-popup', upsell: section.settings.upsell_product %}
 
 {% schema %}
 {
@@ -75,11 +75,16 @@
       "label": "t:sections.featured-collection.settings.show_description.label",
       "default": false
     },
-    
     {
       "type": "collection",
       "id": "collection",
       "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    {
+      "type": "product",
+      "id": "upsell_product",
+      "label": "Upsell",
+      "info": "Upsell product for Medium and Black variants"
     },
     {
       "type": "range",

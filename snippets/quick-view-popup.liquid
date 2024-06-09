@@ -11,6 +11,9 @@
                         <img src="//muhammad-awais-test.myshopify.com/cdn/shop/files/smiling-woman-on-snowy-afternoon_925x_bdcaf0cb-c761-46c3-a529-bd1e7849dc43.jpg?v=1717509247&amp;width=533">
                     </div>
                     <div class="pro-info" data-variants=''>
+                        {% if upsell %}
+                            <input type="hidden" name="upsell" value="{{ upsell.selected_or_first_available_variant.id }}">
+                        {% endif %}
                         <h4 class="pro-title">Orange Wide Leg</h4>
                         <div class="pro-price">980,00€</div>
                         <div class="pro-decstiption">
