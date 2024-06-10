@@ -200,68 +200,63 @@ textarea {
 
 
 #toggle {
-    width: 35px;
+    width: 25px;
     height: 16px;
     margin: 0;
 }
-  
-  #toggle span:after,
-  #toggle span:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -9px;
-  }
-  #toggle span:after{
-    top: 9px;
-  }
-  #toggle span {
-    position: relative;
-    display: block;
-  }
-  
-  #toggle span, #toggle span:after, #toggle span:before {
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    transition: all .3s;
-    backface-visibility: hidden;
-    border-radius: 0;
+#toggle span:after,
+#toggle span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -6px;
+}
+#toggle span:after{
+  top: 6px;
+}
+#toggle span {
+  position: relative;
+  display: block;
 }
 
-  #toggle.on span {
-    background-color: transparent;
-  }
-  #toggle.on span:before {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  #toggle.on span:after {
-    transform: rotate(-45deg) translate(7px, -8px);
-  }
-  #toggle.on + #menu {
-    opacity: 1;
-    visibility: visible;
-  }
-  #menu {
-    position: absolute;
-    color: #000;
-    width: 100%;
-    padding: 10px;
-    margin: auto;
-    text-align: center;
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 1px 8px #0000000d;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .4s;
-    z-index: 9;
-    left: 0;
+#toggle span, #toggle span:after, #toggle span:before {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: all .3s;
+  backface-visibility: hidden;
+  border-radius: 0;
 }
-  
-  
 
-
+#toggle.on span {
+  background-color: transparent;
+}
+#toggle.on span:before {
+    transform: rotate(45deg) translate(4px, 3px);
+}
+#toggle.on span:after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+#toggle.on + #menu {
+  opacity: 1;
+  visibility: visible;
+}
+#menu {
+  position: absolute;
+  color: #000;
+  width: 100%;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 8px #0000000d;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s;
+  z-index: 9;
+  left: 0;
+}
 
 #banner .banner-desktop{
     position: relative;
