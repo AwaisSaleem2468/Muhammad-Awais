@@ -476,7 +476,7 @@ textarea {
   background-color: #fff;
 }
 .pro-content-wrapper .varient-switch-row input[type="radio"]:checked + label.white:before {
-  background: #fff;
+  background: #000;
 }
 .pro-content-wrapper .dropdown-wrapper {
   position: relative;
