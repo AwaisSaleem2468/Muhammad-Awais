@@ -1,0 +1,125 @@
+{%- style -%}
+  .section-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 991px) {
+    .section-padding{
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section id="custom-collection" class="section-padding">
+    <div class="custom-container">
+        <div class="title-area">
+            {%- if section.settings.title != blank -%}
+                <h2 class="heading">
+                {{ section.settings.title }}
+                </h2>
+            {%- endif -%}
+            {%- if section.settings.description != blank
+                or section.settings.show_description
+                and section.settings.collection.description != empty
+            -%}
+                {%- if section.settings.show_description -%}
+                    {{ section.settings.collection.description }}
+                {%- else -%}
+                    {{ section.settings.description -}}
+                {%- endif %}
+            {%- endif -%}
+        </div>
+        <div class="coll-wrapper">
+            <div class="custom-row">
+                {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+                <div class="custom-col-3">
+                    {% render 'custom-card-product',
+                    card_product: product,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    image_shape: section.settings.image_shape,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    show_vendor: section.settings.show_vendor,
+                    show_rating: section.settings.show_rating,
+                    section_id: section.id,
+                    quick_add: section.settings.quick_add
+                    %}
+                </div>
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>
+{% render 'quick-view-popup', upsell: section.settings.upsell_product %}
+
+{% schema %}
+{
+  "name": "Custom Collection",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Featured collection",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "t:sections.featured-collection.settings.show_description.label",
+      "default": false
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    {
+      "type": "product",
+      "id": "upsell_product",
+      "label": "Upsell",
+      "info": "Upsell product for Medium and Black variants"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 25,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.featured-collection.settings.products_to_show.label"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Collection"
+    }
+  ]
+}
+{% endschema %}
