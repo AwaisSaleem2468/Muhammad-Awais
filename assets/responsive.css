@@ -43,7 +43,8 @@
     }
     #toggle {
         position: absolute;
-        top: 27px;
+        top: 30px;
+        left:20px
     }
     #menu {
         top: 60px;
