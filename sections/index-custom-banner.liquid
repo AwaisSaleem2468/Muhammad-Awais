@@ -37,15 +37,14 @@
         {% endif %}
       </div>
       <a href="#menu" id="toggle" class="for-mobile"><span></span></a>
-          <div id="menu">
-            {% if section.settings.header_caption != blank or section.settings.top_btn_text != blank%}
-              <div class="caption-blk">
-                <p>{{  section.settings.header_caption }}</p>
-                <a href="{{ section.settings.top_btn_link }}" class="btn">{{ section.settings.top_btn_text }}<img src="https://cdn.shopify.com/s/files/1/0656/6576/1443/files/Line_15.png?v=1717694667"></a>
-              </div>
-              {% endif %}
-          </div>
-        
+      <div id="menu" style="background-color:{{ section.settings.header_bgcolor }};">
+        {% if section.settings.header_caption != blank or section.settings.top_btn_text != blank%}
+        <div class="caption-blk">
+          <p>{{  section.settings.header_caption }}</p>
+          <a href="{{ section.settings.top_btn_link }}" class="btn">{{ section.settings.top_btn_text }}<img src="https://cdn.shopify.com/s/files/1/0656/6576/1443/files/Line_15.png?v=1717694667"></a>
+        </div>
+        {% endif %}
+      </div>
     </div>
   </div>
   <div class="banner-desktop for-desktop">
