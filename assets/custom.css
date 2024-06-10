@@ -453,6 +453,7 @@ textarea {
   font-family: Jost, sans-serif;
   font-size: 16px;
   font-weight: 500;
+  position:relative;
 }
 .pro-content-wrapper .varient-switch-row input[type="radio"]:checked + label {
   background: #000;
