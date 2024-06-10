@@ -35,6 +35,39 @@
         justify-content: center;
         padding-bottom: 30px;
     }
+    #banner .banner-top-area {
+        padding: 20px 0px 10px;
+    }
+    #banner .banner-top-bar-wrapper {
+        justify-content: center;
+    }
+    #toggle {
+        position: absolute;
+        top: 27px;
+    }
+    #menu {
+        top: 60px;
+    }
+    #menu p {
+        font-size: 16px;
+        font-family: Jost, sans-serif;
+        color: inherit;
+    }
+    #menu .btn {
+        background-color: #FFF544;
+        color: #000;
+    }
+    #menu .btn img {
+        filter:brightness(0);
+    }
+    #menu .btn:hover {
+        color: #fff;
+        box-shadow: inset 400px 0 0 0 #000;
+    }
+    #menu .btn:hover img {
+        filter:brightness(1);
+    }
+
     #custom-collection .title-area .heading {
         margin: 0;
     }

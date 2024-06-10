@@ -18,18 +18,6 @@
     </summary>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
-        {% if section.settings.header_caption != blank or section.settings.btn_text != blank %}
-          <div class="header-custom-content">
-            <div class="header-caption">
-              <p>{{  section.settings.header_caption }}</p>
-            </div>
-            <div class="header-cta">
-              <a href="{{ section.settings.btn_link }}" class="btn">{{ section.settings.btn_text }}<img src="https://cdn.shopify.com/s/files/1/0656/6576/1443/files/Line_15.png?v=1717694667"></a>
-            </div>
-          </div>
-          
-          {% else %}
-
           <div class="menu-drawer__navigation-container">
             <nav class="menu-drawer__navigation">
               <ul class="menu-drawer__menu has-submenu list-menu" role="list">
@@ -262,7 +250,6 @@
               </ul>
             </div>
           </div>
-          {% endif %}
       </div>
     </div>
   </details>

@@ -17,6 +17,37 @@
 }
 </style>
 <section id="banner">
+  <div class="banner-top-area" style="background-color:{{ section.settings.header_bgcolor }};">
+    <div class="custom-container">
+      <div class="banner-top-bar-wrapper">
+        {% if section.settings.logo != blank %}
+        <div class="logo-blk">
+          <img src="{{ section.settings.logo | img_url: 'master' }}">
+        </div>
+        {% endif %}
+        {% if section.settings.header_caption != blank %}
+        <div class="caption-blk for-desktop">
+          <p>{{  section.settings.header_caption }}</p>
+        </div>
+        {% endif %}
+        {% if section.settings.top_btn_text != blank %}
+        <div class="btn-blk for-desktop">
+          <a href="{{ section.settings.top_btn_link }}" class="btn">{{ section.settings.top_btn_text }}<img src="https://cdn.shopify.com/s/files/1/0656/6576/1443/files/Line_15.png?v=1717694667"></a>
+        </div>
+        {% endif %}
+      </div>
+      <a href="#menu" id="toggle" class="for-mobile"><span></span></a>
+          <div id="menu">
+            {% if section.settings.header_caption != blank or section.settings.top_btn_text != blank%}
+              <div class="caption-blk">
+                <p>{{  section.settings.header_caption }}</p>
+                <a href="{{ section.settings.top_btn_link }}" class="btn">{{ section.settings.top_btn_text }}<img src="https://cdn.shopify.com/s/files/1/0656/6576/1443/files/Line_15.png?v=1717694667"></a>
+              </div>
+              {% endif %}
+          </div>
+        
+    </div>
+  </div>
   <div class="banner-desktop for-desktop">
     <div class="content-wrapper">
       <div class="content-blk" style="background-color:{{ section.settings.box_bgcolor }}; color:{{ section.settings.box_text_color }};">
@@ -64,6 +95,38 @@
 {
   "name": "Cusatom Banner",
   "settings": [
+    {
+      "type": "header",
+      "content": "Banner Top Content Customizable Content"
+    },
+    {
+      "type": "color",
+      "id": "header_bgcolor",
+      "label": "Select Header Background Color",
+      "default": "#F5F5F5"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Select Logo"
+    },
+    {
+      "type": "text",
+      "id": "header_caption",
+      "label": "Add Header Caption Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "top_btn_text",
+      "label": "Add Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "top_btn_link",
+      "label": "Add Button link"
+    },
     {
       "type": "image_picker",
       "id": "background-d",
