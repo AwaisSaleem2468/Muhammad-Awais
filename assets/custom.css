@@ -247,7 +247,6 @@ textarea {
   padding: 10px;
   margin: auto;
   text-align: center;
-  border-radius: 4px;
   background: #fff;
   opacity: 0;
   visibility: hidden;
@@ -467,11 +466,15 @@ textarea {
     font-family: Jost, sans-serif;
     font-size: 16px;
     font-weight: 500;
+    position:relative;
 }
- .pro-content-wrapper .varient-switch-row input[type="radio"]:checked + label {
-    background: #000;
-    color: #fff;
-  }  
+.pro-content-wrapper .varient-switch-row input[type="radio"]:checked + label {
+  background: #000;
+  color: #fff;
+}
+.pro-content-wrapper .varient-switch-row label.black:before{
+  
+}
 .pro-content-wrapper .dropdown-wrapper {
     position: relative;
     width: 100%;
