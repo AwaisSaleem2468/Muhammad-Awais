@@ -124,6 +124,7 @@
     }
     #custom-collection .title-area .heading {
         margin: 0;
+        font-size: 24px;
     }
     #custom-collection .card-head {
         height: 180px;
