@@ -4,6 +4,7 @@
   "sections": {
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
@@ -16,10 +17,6 @@
         "enable_language_selector": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "header_bgcolor": "#F5F5F5",
-        "header_caption": "Find the ideal gift for your loved ones.",
-        "btn_text": "Shop Now",
-        "btn_link": "",
         "padding_top": 20,
         "padding_bottom": 20
       }
