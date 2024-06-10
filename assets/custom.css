@@ -457,23 +457,23 @@ textarea {
 }
 .pro-content-wrapper .varient-switch-row label {
     cursor: pointer;
-    padding: 7px 12px;
+    padding: 7px 15px 7px 20px;
     display: inline-block;
     width: 100%;
     background-color: #fff;
-    text-align: center;
+    text-align: left;
     border: 1px solid #000;
     font-family: Jost, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    position:relative;
 }
 .pro-content-wrapper .varient-switch-row input[type="radio"]:checked + label {
   background: #000;
   color: #fff;
 }
 .pro-content-wrapper .varient-switch-row label.black:before{
-  
+  position:absolute;
+  content: "";
 }
 .pro-content-wrapper .dropdown-wrapper {
     position: relative;
